@@ -1,0 +1,6 @@
+{
+  "test_name": "synced_up_to_260241",
+  "expected_block_height": 260241,
+  "expected_stake_info_height": 260241,
+  "expected_best_block_hash": "0000000000000000aeaa610cd2ba4ee1e9fc6f370c1fb5bed7fcd25a79fceea3"
+}
