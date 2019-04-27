@@ -12,17 +12,17 @@
 
 - Execute the following commands to create new tables with the required tests data.
 ```Shell
-    CREATE TABLE test_addresses AS SELECT addresses.* FROM addresses JOIN transactions ON addresses.tx_hash = transactions.tx_hash WHERE transactions.block_height < 200;
+    CREATE TABLE test_addresses AS SELECT * FROM addresses WHERE block_time > '2019-02-17 03:23:23+03' LIMIT 200;
     CREATE TABLE test_agenda_votes AS SELECT * FROM agenda_votes LIMIT 200;
     CREATE TABLE test_agendas AS SELECT * FROM agendas;
     CREATE TABLE test_block_chain AS SELECT * FROM block_chain LIMIT 200;
-    CREATE TABLE test_blocks AS SELECT * FROM blocks WHERE height < 200;
-    CREATE TABLE test_misses AS SELECT * FROM misses WHERE height < 200;
-    CREATE TABLE test_tickets AS SELECT * FROM tickets WHERE block_height < 200;
-    CREATE TABLE test_transactions AS SELECT * FROM transactions WHERE block_height < 200;
-    CREATE TABLE test_vins AS SELECT vins.* FROM vins JOIN transactions ON vins.tx_hash = transactions.tx_hash WHERE transactions.block_height < 200;
-    CREATE TABLE test_votes AS SELECT * FROM votes WHERE height > -1 LIMIT 200;
-    CREATE TABLE test_vouts AS SELECT vouts.* FROM vouts JOIN transactions ON vouts.tx_hash = transactions.tx_hash WHERE transactions.block_height < 200;
+    CREATE TABLE test_blocks AS SELECT * FROM blocks WHERE height > 131800 LIMIT 200;
+    CREATE TABLE test_misses AS SELECT * FROM misses WHERE height > 131800 LIMIT 200;
+    CREATE TABLE test_tickets AS SELECT * FROM tickets WHERE block_height > 131800 LIMIT 200;
+    CREATE TABLE test_transactions AS SELECT * FROM transactions WHERE block_height > 131800 LIMIT 200;
+    CREATE TABLE test_vins AS SELECT * FROM vins WHERE block_time > '2019-02-17 03:23:23+03' LIMIT 200;
+    CREATE TABLE test_votes AS SELECT * FROM votes WHERE height > 131800 LIMIT 200;
+    CREATE TABLE test_vouts AS SELECT * FROM vouts LIMIT 200;
 ```
 
 - Exit the psql shell and create a dump file with the newly created tables' data.
