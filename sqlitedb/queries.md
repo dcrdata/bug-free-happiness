@@ -18,10 +18,10 @@
 - Create dump files with the newly created tables' data and dump data into `data_1.sql` and `data_2.sql` as shown.
 ```Shell
     .output data_1.sql
-    .dump test_dcrdata_block_summary;
+    .dump test_dcrdata_block_summary
 
     .output data_2.sql
-    .dump test_dcrdata_stakeinfo_extended;
+    .dump test_dcrdata_stakeinfo_extended
 ```
 
 - Delete the newly created tests tables with prefix **test_** from the testnet3 db.
