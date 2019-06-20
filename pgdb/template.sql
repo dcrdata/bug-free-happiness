@@ -7,7 +7,7 @@ CREATE TABLE test_block_chain AS SELECT block_chain.* FROM block_chain JOIN bloc
 CREATE TABLE test_blocks AS SELECT * FROM blocks WHERE height >= _START AND height <= _END;
 CREATE TABLE test_misses AS SELECT * FROM misses WHERE height >= _START AND height <= _END;
 CREATE TABLE test_tickets AS SELECT * FROM tickets WHERE block_height >= _START AND block_height <= _END;
-CREATE TABLE test_transactions AS SELECT * FROM transactions WHERE block_height > _START AND block_height <= _END;
+CREATE TABLE test_transactions AS SELECT * FROM transactions WHERE block_height >= _START AND block_height <= _END;
 CREATE TABLE test_vins AS SELECT vins.* FROM vins JOIN transactions ON vins.tx_hash = transactions.tx_hash WHERE transactions.block_height >= _START AND transactions.block_height <= _END;
 CREATE TABLE test_votes AS SELECT votes.* FROM votes JOIN transactions ON votes.tx_hash = transactions.tx_hash WHERE transactions.block_height >= _START AND transactions.block_height <= _END;
 CREATE TABLE test_vouts AS SELECT vouts.* FROM vouts JOIN transactions ON vouts.tx_hash = transactions.tx_hash WHERE transactions.block_height >= _START AND transactions.block_height <= _END;
