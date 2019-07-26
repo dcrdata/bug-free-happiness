@@ -1,2 +1,0 @@
-CREATE TABLE test_dcrdata_block_summary AS SELECT * FROM dcrdata_block_summary WHERE height < 200;
-CREATE TABLE test_dcrdata_stakeinfo_extended AS SELECT * FROM dcrdata_stakeinfo_extended WHERE height < 200;
