@@ -35,7 +35,7 @@ echo "$SQL" | psql -U postgres
 
 pg_dump -t test_addresses -t test_agenda_votes -t test_agendas -t \
         test_block_chain -t test_misses -t test_votes -t test_vouts  -t test_blocks -t test_transactions \
-        -t test_vins -t test_tickets -t test_meta --column-inserts -U postgres "$DATABASE" > ./"$OPFILE".sql
+        -t test_vins -t test_tickets -t test_meta -t test_stats --column-inserts -U postgres "$DATABASE" > ./"$OPFILE".sql
 
 XZ_OPT=-9e tar -cJf "$OPFILE".tar.xz "$OPFILE".sql
 
